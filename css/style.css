@@ -16,9 +16,11 @@ body{
     font-size: 18px;
 }
 .search-box{
+    position: relative;
     background-image: url(../images/pattern-bg.png);
     background-repeat: no-repeat;
     background-size: cover;
+    height: 30vh;
 }
 .input-group{
     width: 50%;
@@ -32,4 +34,17 @@ body{
 .btn-black:hover{
     background-color: black;
     color: white;
+}
+#map {
+     height: 500px;
+     z-index: 1;
+     top: -125px;
+     margin-bottom: 0;
+}
+.ip-details{
+    position: relative;
+    z-index: 2;
+    background-color: white;
+    border-radius: 20px;
+    top: -60px;
 }
