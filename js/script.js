@@ -1,8 +1,13 @@
+
+
 document.getElementById('button-addon').addEventListener('click',()=>{
     const inputField = document.getElementById('inputField');
-    const inputFieldValue = inputField.value;
-    let ipAddress = inputFieldValue;
-    const url = `https://geo.ipify.org/api/v2/country,city,vpn?apiKey=at_EP3bxLFf61aTLFzAiSrAGZ85rMOsX&ipAddress=${ipAddress}`
+    let inputFieldValue = inputField.value;
+    // var container = L.DomUtil.get('map');
+    // if(container != null){
+    // container._leaflet_id = null;
+    // }
+    const url = `https://geo.ipify.org/api/v2/country,city,vpn?apiKey=at_EP3bxLFf61aTLFzAiSrAGZ85rMOsX&ipAddress=${inputFieldValue}`
     fetch(url)
     .then( res => res.json())
     .then(data => loadData(data));
@@ -22,7 +27,11 @@ document.getElementById('button-addon').addEventListener('click',()=>{
     timeZoneField.innerText = timeZone;
     const ispField = document.getElementById('ispField');
     ispField.innerText = isp;
-    let map = L.map('map').setView([lat, lng], 13);
+    var container = L.DomUtil.get('map');
+    if(container != null){
+    container._leaflet_id = null;
+    }
+    var map = L.map('map').setView([lat, lng], 13);
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '© OpenStreetMap'
@@ -34,9 +43,11 @@ L.marker([lat, lng]).addTo(map)
 inputField.innerText = '';
 })
 
-
-
-
-
-
-
+var map = L.map('map').setView([25.34292776226863, 72.62408240036223], 13);
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '© OpenStreetMap'
+}).addTo(map);
+L.marker([25.34292776226863, 72.62408240036223]).addTo(map)
+    .bindPopup(location)
+    .openPopup();
