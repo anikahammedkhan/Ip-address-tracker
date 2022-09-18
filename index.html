@@ -27,29 +27,29 @@
     <div class="container search-box py-5">
       <h1 class="text-white text-center">IP Address Tracker</h1>
         <div class="input-group mb-3 mx-auto">
-          <input type="text" class="form-control" placeholder="Search for any IP address or Domain" aria-label="" aria-describedby="button-addon">
+          <input id="inputField" type="text" class="form-control" placeholder="Search for any IP address or Domain" aria-label="" aria-describedby="button-addon">
           <button class="btn-black" type="button" id="button-addon"><i class="fa-solid fa-chevron-right"></i></button>
       </div>
     </div>
     <div class="container ip-details d-flex justify-content-center  align-items-center w-50">
       <div class="p-4">
         <h5>IP Address</h5>
-        <p>120.131.24.23</p>
+        <p id="ipField"></p>
       </div>
       <div style="border-left:1px solid #000;height:100px"></div>
       <div class="p-4">
         <h5>Location</h5>
-        <p>Middle Badda</p>
+        <p id="locationField"></p>
       </div>
       <div style="border-left:1px solid #000;height:100px"></div>
       <div class="p-4">
         <h5>Time Zone</h5>
-        <p>GMT +6</p>
+        <p id="timeZoneField"></p>
       </div>
       <div style="border-left:1px solid #000;height:100px"></div>
       <div class="p-4">
         <h5>ISP</h5>
-        <p>Sam Online</p>
+        <p id="ispField"></p>
       </div>
     </div>
     <div class="container" id="map">
